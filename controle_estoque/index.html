@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque de Frutas</title>
+</head>
+<body>
+
+    <h1>Estoque de Frutas</h1>
+
+    <button onclick="mostrarFrutas()">Mostrar Frutas</button>
+    <button onclick="adicionarFrutas()">Adicionar Frutas</button>
+    <button onclick="removerFruta()">remover Fruta</button>
+
+    <h3>Lista de Frutas:</h3>
+    <p id="lista"></p>
+
+    <script>
+        //Array que armazena as frutas
+        let frutas=["Maçã","Banana","Laranja"];
+
+        //Função para mostrar as frutas na tela
+        function mostrarFrutas()
+        {
+            document.getElementById("lista").innerHTML = "Frutas: " + frutas.length;
+
+        }
+
+        //Função para adicionar fruta 
+        function adicionarFrutas()
+        {
+            let novaFruta = prompt("Digite o nome da fruta:");
+            
+            if(novaFruta){
+
+                frutas.push(novaFruta);
+                mostrarFrutas();
+            }
+        }
+
+        //Função para remover última fruta
+        function removerFruta(){
+            if (frutas.length>0){
+                frutas.pop();
+                
+            }else{
+                alert("O estoque está vazio!");
+
+            }
+            mostrarFrutas();
+        }
+
+        
+    </script>
+    
+</body>
+</html>
